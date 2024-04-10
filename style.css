@@ -289,10 +289,20 @@ body {
 .other-article {
   display: flex;
   gap: 1rem;
+  color: var(--clr-dark-grayish-blue);
 }
 
 .number {
   color: var(--clr-grayish-blue);
   font-size: 2rem;
+}
+
+.other-article-heading {
+  color: var(--clr-very-dark-blue);
+
+  &:is(:hover, :focus) {
+    color: var(--clr-soft-red);
+    transition: .2s;
+  }
 }
 
