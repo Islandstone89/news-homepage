@@ -56,6 +56,11 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  object-fit: cover;
+
+  @media (width > 40rem) {
+    height: 100%;
+  }
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -139,24 +144,30 @@ a {
     position: absolute;
     left: -1000px;
     z-index: 10;
-    padding: 1em;
+    padding: .8em;
     background-color: black;
     color: white;
     opacity: 0;
 }
 
 .skip-link:focus {
-    position: static;
-    left: 50%;
-    top: auto;
-    transform: translateX(-50%);
+    left: 0;
+    top: 20px;
     opacity: 1;
+}
+
+.flow {
+  --flow-space: .8em;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
 }
 
 /* GENERAL STYLING */
 
 :is(.header, .main) {
-    max-width: 55rem;
+    max-width: 60rem;
 }
 
 body {
@@ -176,7 +187,7 @@ body {
 .header {
     display: flex;
     gap: 1rem;
-    padding-block: 2rem;
+    padding: 2rem 1rem;
     width: 100%;
 }
 
@@ -194,44 +205,83 @@ body {
     transition: .2s;
 }
 
+.menu-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 /* MAIN */
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+
+  @media (width > 40rem) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    
+  }
+}
 
 
 /* FEATURED ARTICLE */
 
 .featured-article {
+    
+
+  @media (width > 40rem) {  
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;  
+    }
 }
 
 .image-wrapper {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
+
+    @media (width > 40rem) {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
 }
 
 .featured-article-preview {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
     padding-block: 2rem;
+    
+    @media (width > 40rem) {
+      padding-block: initial;
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+    }
 }
 
 .featured-article-heading {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
     font-weight: var(--fw-800);
-    font-size: 2rem;
+    font-size: 3rem;
+
+    @media (width > 40rem) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
 }
 
 .featured-article-preview-text {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
     display: flex;
     flex-direction: column;
+
+    @media (width > 40rem) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
 }
+
 
 .featured-article-btn {
     width: fit-content;
@@ -241,7 +291,7 @@ body {
     letter-spacing: .2em;
     background-color: var(--clr-soft-red-darker);
     color: var(--clr-off-white);
-    margin-top: auto;
+    margin-block-start: auto;
 
     &:is(:hover, :focus) {
         background-color: var(--clr-very-dark-blue);
@@ -254,10 +304,18 @@ body {
 .new-articles {
   background-color: var(--clr-very-dark-blue);
   color: var(--clr-grayish-blue);
+  padding-inline: 1rem;
+
+  @media (width > 40rem) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
 }
 
 .new-articles-main-heading {
   color: var(--clr-soft-orange);
+  font-size: 2rem;
+  padding-block-start: 1.7rem;
 }
 
 .new-articles-list-item-heading {
@@ -270,7 +328,7 @@ body {
 }
 
 .new-articles-list-item {
-  padding-block: 1rem;
+  padding-block: 1.7rem;
 }
 
 .new-articles-list-item:not(:last-child) {
@@ -281,24 +339,37 @@ body {
 /* OTHER ARTICLES */
 
 .other-articles {
+  padding-block: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
+
+  @media (width > 40rem) {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    grid-template-columns: subgrid;
+    gap: initial;
+  }
 }
 
 .other-article {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 1rem;
+  align-content: center;
   color: var(--clr-dark-grayish-blue);
 }
 
 .number {
   color: var(--clr-grayish-blue);
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .other-article-heading {
+  --flow-space: .5em;
   color: var(--clr-very-dark-blue);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-800);
 
   &:is(:hover, :focus) {
     color: var(--clr-soft-red);
@@ -306,3 +377,10 @@ body {
   }
 }
 
+.text {
+  --flow-space: 1.5em;
+
+  @media (width > 40rem) {
+    --flow-space: .5em;
+  }
+}

@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
   <title>Frontend Mentor | News homepage</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
       <img src="assets/images/logo.svg" alt="Home">
     </a>
 
-    <nav class="navbar">
+    <nav class="navbar" id="navigation">
       <ul class="navbar-list">
         <li class="navbar-list-item">
           <a href="#" class="navbar-list-item-link">Home</a>
@@ -42,6 +43,24 @@
         </li>
       </ul>
     </nav><!-- end navbar -->
+
+    <div class="test">
+
+      <button class="menu-btn js-menu-btn" aria-expanded="false" aria-controls="#navigation">
+        <svg class="menu-icon" width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/>
+            <path d="M0 0h40v3H0z"/>
+          </g>
+        </svg>
+      </button>
+      
+
+      <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z"/><path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z"/></g></svg>
+
+
+    </div>
+
   </header><!-- end header -->
 
   <main class="main" id="main-content">
@@ -56,7 +75,7 @@
 
         <h2 class="featured-article-heading">The Bright Future of Web 3.0?</h2>
         <div class="featured-article-preview-text">
-          <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
+          <p class="featured-article-preview-text-paragraph">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
           <a href="#" class="featured-article-btn">Read more</a>
         </div>  <!-- end featured-article-preview-text -->
 
@@ -67,17 +86,17 @@
       <h2 class="new-articles-main-heading">New</h2>
 
       <ul class="new-articles-list">
-        <li class="new-articles-list-item">
+        <li class="new-articles-list-item flow flow">
           <h3 class="new-articles-list-item-heading"><a href="#">Hydrogen VS Electric Cars</a></h3>
           <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
         </li>
 
-        <li class="new-articles-list-item">
+        <li class="new-articles-list-item flow">
           <h3 class="new-articles-list-item-heading"><a href="#">The Downsides of AI Artistry</a></h3>
           <p>What are the possible adverse effects of on-demand AI image generation?</p>
         </li>
 
-        <li class="new-articles-list-item">
+        <li class="new-articles-list-item flow">
           <h3 class="new-articles-list-item-heading"><a href="#">Is VC Funding Drying Up?</a></h3>
           <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
         </li>
@@ -87,8 +106,8 @@
     <div class="other-articles">
 
       <div class="other-article">
-        <img src="assets/images/image-retro-pcs.jpg" alt="">
-        <div class="text">
+        <img src="assets/images/image-retro-pcs.jpg" alt="" class="other-article-image">
+        <div class="text flow">
           <p class="number">01</p>
           <h2 class="other-article-heading"><a href="#">Reviving Retro PCs</a></h2>
           <p>What happens when old PCs are given modern upgrades?</p>
@@ -96,8 +115,8 @@
       </div><!-- end other-article -->
 
       <div class="other-article">
-        <img src="assets/images/image-top-laptops.jpg" alt="">
-        <div class="text">
+        <img src="assets/images/image-top-laptops.jpg" alt="" class="other-article-image">
+        <div class="text flow">
           <p class="number">02</p>
           <h2 class="other-article-heading"><a href="#">Top 10 Laptops of 2022</a></h2>
           <p>Our best picks for various needs and budgets</p>
@@ -105,8 +124,8 @@
       </div><!-- end other-article -->
 
       <div class="other-article">
-        <img src="assets/images/image-gaming-growth.jpg" alt="">
-        <div class="text">
+        <img src="assets/images/image-gaming-growth.jpg" alt="" class="other-article-image">
+        <div class="text flow">
           <p class="number">03</p>
           <h2 class="other-article-heading"><a href="#">The Growth of Gaming</a></h2>
           <p>How the pandemic has sparked fresh opportunities.</p>
