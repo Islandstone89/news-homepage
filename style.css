@@ -193,6 +193,7 @@ body {
 
 .navbar {
     margin-inline-start: auto;
+    color: var(--clr-dark-grayish-blue);
 }
 
 .navbar-list {
@@ -218,11 +219,9 @@ body {
   grid-template-columns: 1fr;
   gap: 2rem;
 
-
   @media (width > 40rem) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
-    
   }
 }
 
@@ -230,7 +229,7 @@ body {
 /* FEATURED ARTICLE */
 
 .featured-article {
-    
+  color: var(--clr-dark-grayish-blue); 
 
   @media (width > 40rem) {  
     grid-column: 1 / 3;
@@ -265,6 +264,7 @@ body {
 .featured-article-heading {
     font-weight: var(--fw-800);
     font-size: 3rem;
+    color: var(--clr-very-dark-blue);
 
     @media (width > 40rem) {
       grid-column: 1 / 2;
