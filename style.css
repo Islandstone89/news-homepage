@@ -56,7 +56,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 
   @media (width > 40rem) {
     height: 100%;
@@ -167,7 +167,7 @@ a {
 /* GENERAL STYLING */
 
 :is(.header, .main) {
-    max-width: 60rem;
+    max-width: 62rem;
 }
 
 body {
@@ -291,7 +291,11 @@ body {
     letter-spacing: .2em;
     background-color: var(--clr-soft-red-darker);
     color: var(--clr-off-white);
-    margin-block-start: auto;
+    --flow-space: 1.8em;
+    
+    @media (width > 40rem) {
+      margin-block-start: auto;
+    }
 
     &:is(:hover, :focus) {
         background-color: var(--clr-very-dark-blue);
