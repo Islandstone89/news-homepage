@@ -188,23 +188,27 @@ body {
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: space-between;
     padding: 2rem 1rem;
     width: 100%;
 }
 
 .navbar {
-    visibility: hidden;
+    display: none;
     margin-inline-start: auto;
     color: var(--clr-dark-grayish-blue);
+    position: relative;
+    padding-block-start: 4rem;
 
     @media (width > 40rem) {
-      visibility: visible;
+      display: block;
+      position: static;
     }
 }
 
 .header:has(.menu-btn-open[aria-expanded="true"]) {
   .navbar {
-    visibility: visible;
+    display: block;
     color: var(--clr-very-dark-blue);
     font-weight: var(--fw-700);
   }
@@ -247,6 +251,9 @@ body {
   background-color: transparent;
   cursor: pointer;
   display: none;
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }
 
 .test {
