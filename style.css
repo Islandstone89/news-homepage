@@ -203,25 +203,25 @@ body {
     }
 }
 
-.header:has(.menu-btn-open[aria-expanded="true"]) {
-  padding: 0;
+body:has(.menu-btn-open[aria-expanded="true"]) {
   
   .navbar {
     display: block;
     color: var(--clr-very-dark-blue);
     font-weight: var(--fw-700);
-    padding: 6rem 0 0 1rem;
+    padding: 8rem 0 0 1rem;
   }
   .navbar-list {
     flex-direction: column;
   }
   .nav-wrapper {
-    /* position: absolute; */
-    background-color: lightsalmon;
+    background-color: var(--clr-off-white);
     height: 100vh;
-    width: 70%;
+    width: 65%;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
-
 }
 
 .navbar-list {
@@ -255,7 +255,7 @@ body {
   cursor: pointer;
   display: none;
   position: absolute;
-  top: 5%;
+  top: 5%;  
   right: 5%;
 }
 
@@ -264,6 +264,8 @@ body {
     display: none;
   }
 }
+
+
 
 /* MAIN */
 
