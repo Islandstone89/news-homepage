@@ -204,7 +204,7 @@ body {
 }
 
 body:has(.menu-btn-open[aria-expanded="true"]) {
-  
+
   .navbar {
     display: block;
     color: var(--clr-very-dark-blue);
@@ -216,7 +216,7 @@ body:has(.menu-btn-open[aria-expanded="true"]) {
   }
   .nav-wrapper {
     background-color: var(--clr-off-white);
-    height: 100vh;
+    height: 100svh;
     width: 65%;
     position: absolute;
     top: 0;
