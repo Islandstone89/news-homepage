@@ -164,6 +164,19 @@ a {
   margin-block-start: var(--flow-space, 1em);
 }
 
+
+/* OVERLAY*/
+
+.overlay {
+  position: absolute;
+  background-color: var(--clr-very-dark-blue);
+  opacity: .5;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+
 /* GENERAL STYLING */
 
 :is(.header, .main) {
@@ -205,11 +218,15 @@ body {
 
 body:has(.menu-btn-open[aria-expanded="true"]) {
 
+  .overlay {
+    display: block;
+  }
+
   .navbar {
     display: block;
     color: var(--clr-very-dark-blue);
     font-weight: var(--fw-700);
-    padding: 8rem 0 0 1rem;
+    padding: 8rem 0 0 1.5rem;
   }
   .navbar-list {
     flex-direction: column;
